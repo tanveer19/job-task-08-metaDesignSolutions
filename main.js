@@ -9,6 +9,7 @@ saveButton.addEventListener("click", function (e) {
   var dob = document.getElementById("dob").value;
   var fullName = document.getElementById("fullName").value;
   var nickName = document.getElementById("nickName").value;
+
   // Create a new Date object from the dob value
   var date = new Date(dob);
 
@@ -28,7 +29,6 @@ saveButton.addEventListener("click", function (e) {
     "Dec",
   ];
 
-  // Format the date as "Aug 27, 2020"
   var formattedDate =
     monthNames[date.getMonth()] +
     " " +
@@ -39,16 +39,25 @@ saveButton.addEventListener("click", function (e) {
   var activityDiv = document.createElement("div");
   activityDiv.classList.add(
     "activity",
-    "border",
+    "border-top",
     "d-flex",
     "justify-content-between",
-    "align-items-center"
+    "align-items-center",
+    "gap-5",
+    "px-3"
   );
 
   // Create a div for the activity details
   var activityDetails = document.createElement("div");
   activityDetails.innerHTML =
-    fullName + "<br />" + formattedDate + "  " + " | " + "  " + nickName;
+    "<strong>" +
+    fullName +
+    "</strong><br />" +
+    formattedDate +
+    "  " +
+    " | " +
+    "  " +
+    nickName;
 
   // Add the activity details to the activity div
   activityDiv.appendChild(activityDetails);
@@ -70,6 +79,15 @@ saveButton.addEventListener("click", function (e) {
   dropdownMenu.querySelector("#delete").addEventListener("click", function () {
     activityDiv.remove();
   });
+
+  dropdownMenu
+    .querySelector("#markAsDone")
+    .addEventListener("click", function () {
+      var checkIcon = document.createElement("i");
+      checkIcon.classList.add("fa-solid", "fa-check");
+
+      activityDiv.insertBefore(checkIcon, dropdownMenu);
+    });
 
   document.getElementById("activities").appendChild(activityDiv);
 

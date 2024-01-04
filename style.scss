@@ -18,3 +18,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.fa-check {
+  color: white;
+  background-color: #bdba35; /* Change this to your desired background color */
+  border-radius: 50%; /* This makes the background rounded */
+  padding: 5px; /* This adds some space around the icon */
+}
+.fa-plus {
+  background-color: #eaeaea;
+  border-radius: 50%;
+  padding: 12px;
+}
