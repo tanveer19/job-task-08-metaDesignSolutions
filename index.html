@@ -18,17 +18,18 @@
         <div class="row">
           <div class="col-4"></div>
           <div
-            class="col-4 d-flex gap-2 justify-content-center align-items-center border border-primary"
+            class="col-4 d-flex flex-column gap-2 justify-content-center align-items-center border border-primary"
           >
-            <h2 class="text-color">Upcoming Activities</h2>
-            <i
-              class="fa-regular fa-plus text-color"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            ></i>
-            <i class="fa-solid fa-check"></i>
-
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <div class="d-flex align-items-center gap-2">
+              <h4 class="text-color">Upcoming Activities</h4>
+              <i
+                class="fa-regular fa-plus text-color"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              ></i>
+            </div>
+            <div id="activities" class=""></div>
+            <!-- <i class="fa-solid fa-check"></i> -->
           </div>
           <div class="col-4"></div>
 
@@ -57,12 +58,12 @@
                   <form>
                     <div class="mb-3">
                       <label for="dob" class="form-label">Date of Birth</label>
+                      <!-- <input type="date" class="form-control" id="dob" /> -->
                       <input
-                        type="text"
-                        placeholder="DD/MM/YYYY"
-                        onfocus="(this.type='date')"
                         class="form-control"
+                        type="date"
                         id="dob"
+                        onclick="this.type='date';this.onclick=null;"
                       />
                     </div>
                     <div class="mb-3">

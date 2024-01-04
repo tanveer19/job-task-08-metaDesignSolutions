@@ -9,19 +9,12 @@
   border-bottom: 1px solid #ebebeb;
   border-radius: 0;
 }
-/* Remove the default calendar icon */
-input[type="date"]::-webkit-calendar-picker-indicator {
-  background: transparent;
-  bottom: 0;
-  color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
+
 .modal-footer {
   border-top: 0;
+}
+.activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
