@@ -1,35 +1,54 @@
+$text-color: #bdba35;
+$border-color-custom: #7ec9fd;
+$bg-color: #bdba35;
+$form-control-border: #ebebeb;
+$fa-check-bg: #bdba35;
+$fa-plus-bg: #eaeaea;
+$font-family: "Lato", sans-serif;
+
+body {
+  font-family: $font-family;
+}
+
 .text-color {
-  color: #bdba35;
+  color: $text-color;
   font-weight: bold;
 }
-.bg-color {
-  background-color: #bdba35;
+
+.border-color-custom {
+  border-color: $border-color-custom !important;
+  box-shadow: 0 0 0 3px $form-control-border;
 }
+
+.bg-color {
+  background-color: $bg-color;
+}
+
 .form-control {
   border: none;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid $form-control-border;
   border-radius: 0;
 }
 
 .modal-footer {
   border-top: 0;
 }
+
 .activity {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .fa-check {
   color: white;
-  background-color: #bdba35; /* Change this to your desired background color */
-  border-radius: 50%; /* This makes the background rounded */
-  padding: 5px; /* This adds some space around the icon */
+  background-color: $fa-check-bg;
+  border-radius: 50%;
+  padding: 5px;
 }
+
 .fa-plus {
-  background-color: #eaeaea;
+  background-color: $fa-plus-bg;
   border-radius: 50%;
   padding: 12px;
-}
-body {
-  font-family: "Lato", sans-serif;
 }

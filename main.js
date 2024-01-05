@@ -53,12 +53,10 @@ saveButton.addEventListener("click", function (e) {
   activityDetails.innerHTML =
     "<strong>" +
     fullName +
-    "</strong><br />" +
+    "</strong> <br />" +
     "<span style='color: #bebebe;'>" +
     formattedDate +
-    "</span>" +
     " | " +
-    "<span style='color: #bebebe;'>" +
     nickName +
     "</span>";
 
@@ -70,8 +68,8 @@ saveButton.addEventListener("click", function (e) {
   dropdownMenu.classList.add("dropdown");
   dropdownMenu.innerHTML = `
       <i class="fa-solid fa-ellipsis-vertical" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
-      <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-        <li><a href="#" class="dropdown-item" id="markAsDone">Mark as Done</a></li>
+      <ul class="dropdown-menu border border-3 border-color-custom" aria-labelledby="dropdownMenuButton">
+        <li><a href="#" class="dropdown-item form-control" id="markAsDone">Mark as Done</a></li>
         <li><a href="#" class="dropdown-item" id="delete">Delete</a></li>
       </ul>
     `;
@@ -88,8 +86,13 @@ saveButton.addEventListener("click", function (e) {
     .addEventListener("click", function () {
       var checkIcon = document.createElement("i");
       checkIcon.classList.add("fa-solid", "fa-check");
+      checkIcon.style.marginRight = "-100px";
 
       activityDiv.insertBefore(checkIcon, dropdownMenu);
+
+      // disable Mark as Done button
+      this.style.pointerEvents = "none";
+      this.style.color = "#ccc";
     });
 
   document.getElementById("activities").appendChild(activityDiv);
