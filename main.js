@@ -44,20 +44,23 @@ saveButton.addEventListener("click", function (e) {
     "justify-content-between",
     "align-items-center",
     "gap-5",
-    "px-3"
+    "p-3"
   );
 
   // Create a div for the activity details
   var activityDetails = document.createElement("div");
+
   activityDetails.innerHTML =
     "<strong>" +
     fullName +
     "</strong><br />" +
+    "<span style='color: #bebebe;'>" +
     formattedDate +
-    "  " +
+    "</span>" +
     " | " +
-    "  " +
-    nickName;
+    "<span style='color: #bebebe;'>" +
+    nickName +
+    "</span>";
 
   // Add the activity details to the activity div
   activityDiv.appendChild(activityDetails);
